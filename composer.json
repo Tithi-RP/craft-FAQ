@@ -4,7 +4,10 @@
   "type": "craft-plugin",
   "license": "proprietary",
   "support": {
-    "email": "tithi92.rp@gmail.com"
+    "email": "tithi92.rp@gmail.com",
+    "issues": "https://github.com/Tithi-RP/craft-FAQ/issues",
+    "source": "https://github.com/Tithi-RP/craft-FAQ",
+    "docs": "https://github.com/Tithi-RP/craft-FAQ/blob/main/README.md"
   },
   "require": {
     "php": ">=8.2",
@@ -39,5 +42,14 @@
       "yiisoft/yii2-composer": true,
       "craftcms/plugin-installer": true
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "github.com/Tithi-RP/craft-FAQ",
+      "url": "https://github.com/Tithi-RP/craft-FAQ"
+    }
+  ]
+
 }
