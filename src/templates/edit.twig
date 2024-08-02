@@ -1,0 +1,52 @@
+{% extends "_layouts/cp" %}
+{% block content %}
+
+    <style>
+        .input input, .input textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 8px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+            display: block; /* Ensures the element is rendered as a block element */
+        }
+    </style>
+
+    <h1>{{ faq.id ? 'Edit FAQ' : 'New FAQ' }}</h1>
+    <form method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+        {{ csrfInput() }}
+        {{ hiddenInput('action', 'faq/faq/save-faq') }}
+        {{ hiddenInput('redirect', 'faq') }}
+        {{ hiddenInput('id', faq.id) }}
+
+        <div class="field">
+            <div class="heading">
+                <label for="question">Question</label>
+            </div>
+            <div class="input">
+                <input type="text" class="w-full" id="question" name="question" value="{{ faq.question }}" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="heading">
+                <label for="answer">Answer</label>
+            </div>
+            <div class="input">
+                <textarea id="answer" class="w-full" required name="answer">{{ faq.answer }}</textarea>
+            </div>
+        </div>
+
+        {#<div class="field">
+            <div class="heading">
+                <label for="type">Type</label>
+            </div>
+            <div class="input">
+                <input type="text" id="type" class="w-full" name="type" value="{{ faq.type }}" required>
+            </div>
+        </div>#}
+
+        <div class="buttons">
+            <button type="submit" class="btn submit">{{ faq.id ? 'Save' : 'Create' }}</button>
+        </div>
+    </form>
+{% endblock %}

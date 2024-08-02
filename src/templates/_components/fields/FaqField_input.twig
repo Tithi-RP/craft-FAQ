@@ -1,0 +1,39 @@
+<div class="faq-list">
+    <ul id="{{ id }}-list" class="faq-list-items">
+        {% for faq in faqs %}
+            <li data-id="{{ faq.id }}">
+                <label>
+                
+                    {#<input type="checkbox" name="{{ name }}[]" value="{{ faq.id }}" 
+                    {% if value is not empty %}
+                        {% if faq.id in value %}checked{% endif %}
+                    {% else %}
+                        checked
+                    {% endif %}>#}
+
+                    <input type="checkbox" name="{{ name }}[]" value="{{ faq.id }}" {% if faq.id in value %}checked{% endif %}>
+
+                    {{ faq.question }}
+                </label>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{# <button type="button" class="btn add-faq" data-target="#{{ id }}-list">Add FAQ</button> #}
+
+<script>
+    document.querySelector('.add-faq').addEventListener('click', function() {
+        const list = document.querySelector(this.dataset.target);
+        const faqId = prompt('Enter FAQ ID to add:');
+        if (faqId) {
+            const existingItem = list.querySelector(`[data-id="${faqId}"]`);
+            if (!existingItem) {
+                const newItem = document.createElement('li');
+                newItem.dataset.id = faqId;
+                newItem.innerHTML = `<label><input type="checkbox" name="{{ name }}[]" value="${faqId}" checked> FAQ ${faqId}</label>`;
+                list.appendChild(newItem);
+            }
+        }
+    });
+</script>
+

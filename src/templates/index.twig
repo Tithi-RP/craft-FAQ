@@ -1,0 +1,30 @@
+
+{% extends "_layouts/cp" %}
+{% block title %}Faq{% endblock %}
+{% block content %}
+   <h1>{{ title }}</h1>
+    <p><a href="{{ url('faq/new') }}" class="btn submit">New FAQ</a></p>
+    <table class="data fullwidth">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+                {#<th>Type</th>#}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for faq in faqs %}
+                <tr>
+                    <td>{{ faq.question }}</td>
+                    <td>{{ faq.answer }}</td>
+                    {# <td>{{ faq.type }}</td>#}
+                    <td>
+                        <a href="{{ url('faq/edit/' ~ faq.id) }}">Edit</a>
+                         <a href="{{ url('faq/delete/' ~ faq.id) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
