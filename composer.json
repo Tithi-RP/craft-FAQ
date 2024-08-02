@@ -42,14 +42,6 @@
       "yiisoft/yii2-composer": true,
       "craftcms/plugin-installer": true
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "github.com/Tithi-RP/craft-FAQ",
-      "url": "https://github.com/Tithi-RP/craft-FAQ"
-    }
-  ]
+  }
 
 }
