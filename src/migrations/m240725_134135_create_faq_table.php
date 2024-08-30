@@ -1,6 +1,6 @@
 <?php
 
-namespace craft\contentmigrations;
+namespace faqmanage\craftfaq\migrations;
 
 use Craft;
 use craft\db\Migration;
