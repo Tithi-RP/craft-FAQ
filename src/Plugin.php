@@ -30,7 +30,7 @@ use faqmanage\craftfaq\variables\FaqVariable;
  */
 class Plugin extends BasePlugin
 {
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0'; 
 
     public bool $hasCpSettings = true;
 
