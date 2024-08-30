@@ -6,9 +6,9 @@ use Craft;
 use craft\db\Migration;
 
 /**
- * m240725_134135_create_faq_table migration.
+ * Install migration.
  */
-class m240725_134135_create_faq_table extends Migration
+class Install extends Migration
 {
     /**
      * @inheritdoc
@@ -32,7 +32,7 @@ class m240725_134135_create_faq_table extends Migration
      */
     public function safeDown(): bool
     {
-        echo "m240725_134135_create_faq_table cannot be reverted.\n";
+        $this->removeTables();
         return false;
     }
 }
