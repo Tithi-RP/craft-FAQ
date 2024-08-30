@@ -30,11 +30,6 @@ use faqmanage\craftfaq\variables\FaqVariable;
  */
 class Plugin extends BasePlugin
 {
-        /**
-     * To execute your plugin’s migrations, you’ll need to increase its schema version.
-     *
-     * @var string
-     */
     public $schemaVersion = '1.0.0';
 
     public bool $hasCpSettings = true;
