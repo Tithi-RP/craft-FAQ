@@ -28,3 +28,18 @@ composer require faq-manage/craft-faq
 # tell Craft to install the plugin
 ./craft plugin/install faq
 ```
+# display the faqs from entries 
+
+        {% if entry.[handler] is not empty %}
+        <div>
+            <ul>
+                {% for faqId in entry.[handler] %}
+                {% set faqData = craft.faq.getFaqById(faqId) %}
+                    <li>
+                        <strong>{{ faqData.question }}</strong><br>
+                        {{ faqData.answer }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
